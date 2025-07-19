@@ -1,19 +1,21 @@
-function createCourseRoutes(app){
-    app.post("/course/purchase",function(req,res){
+const { Router } = require("express");
+const courseRouter = Router();
+
+courseRouter.post("/purchase", function (req, res) {
     //in real world, u will expect user to purchase it using money
     res.json({
-        message:"signup endpoint"
+        message: "purchase  endpoint"
     })
 })
 
-app.get("/course/preview",function(req,res){
+courseRouter.get("/preview", function (req, res) {
     res.json({
-        message:"signup endpoint"
+        message: "course preview  endpoint"
     })
 })
 
 
-}
-module.exports={
-    createCourseRoutes:createCourseRoutes
+
+module.exports = {
+    createCourseRoutes: createCourseRoutes
 }
