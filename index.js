@@ -1,11 +1,13 @@
 const express=require("express");
 const{userRouter}=require("./routes/user")
 const{courseRouter}=require("./routes/course")
+const{adminRouter}=require("./routes/admin")
 //routing using express
 const app=express();
 
 app.use("/api/v1/user",userRouter);
-app.use("/api/v2/course",courseRouter);
+app.use("/api/v1/course",courseRouter);
+app.use("/api/v1/admin",adminRouter);
 
 // createUserRoutes(app);
 // createCourseRoutes(app);
