@@ -4,10 +4,8 @@
   "description": "***Create a course selling app***\r Initialize a new Node.js project",
   "main": "index.js",
   "scripts": {
-    "start":"node index.js",
-    "dev":"nodemon index.js"
-    
-  
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +16,7 @@
   },
   "homepage": "https://github.com/VENKAT6912/course-selling-demo#readme",
   "dependencies": {
+    "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.4"
