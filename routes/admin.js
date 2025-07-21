@@ -15,12 +15,12 @@ adminRouter.post("/signin", function (req, res) {
         message: "signin endpoint"
     })
 })
-adminRouter.post("/course", function (req, res) {
+adminRouter.post("/", function (req, res) {
     res.json({
         message: "course creation endpoint"
     })
 })
-adminRouter.put("/course", function (req, res) {
+adminRouter.put("/", function (req, res) {
     res.json({
         message: "course creation endpoint"
     })
