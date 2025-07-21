@@ -1,7 +1,7 @@
 
 const {Router}=require("express");
 const adminRouter=Router();
-const {adminModel}=require("../db")
+const {adminModel}=require("../db");
 
 // adminRouter.use(adminMiddleWare)
 
@@ -16,12 +16,12 @@ adminRouter.post("/signin", function (req, res) {
         message: "signin endpoint"
     })
 })
-adminRouter.post("/", function (req, res) {
+adminRouter.post("/course", function (req, res) {
     res.json({
         message: "course creation endpoint"
     })
 })
-adminRouter.put("/", function (req, res) {
+adminRouter.put("/course", function (req, res) {
     res.json({
         message: "course creation endpoint"
     })
