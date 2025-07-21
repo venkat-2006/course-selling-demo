@@ -2,7 +2,7 @@
 const {Router}=require("express");
 const adminRouter=Router();
 
-adminRouter.use(adminMiddleWare)
+// adminRouter.use(adminMiddleWare)
 
 adminRouter.post("/signup", function (req, res) {
 
@@ -30,3 +30,6 @@ adminRouter.get("/course/bulk", function (req, res) {
         message: "bulk course display endpoint"
     })
 })
+module.exports = {
+    adminRouter:adminRouter
+}
