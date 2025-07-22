@@ -3,10 +3,14 @@
 // or
 
 const {Router}=require("express");
-const { userModel } = require("../db");
+const { userModel, purchaseModel } = require("../db");
 const jwt=require("jsonwebtoken");
 const {JWT_USER_PASSWORD}=require("../config");
 const userRouter=Router();
+
+const { userMiddleware } = require("../middleware/user");
+
+
 userRouter.post("/signup",async function (req, res) {
     const{email,password,firstName,lastName}=req.body;
      // use zod validation (hashing password)
@@ -44,9 +48,14 @@ userRouter.post("/signin", async function (req, res) {
 
     }
 })
-userRouter.get("/purchases", function (req, res) {
+userRouter.get("/purchases", userMiddleware,async function (req, res) {
+    const userId=req.userId;
+
+    const purchases=await purchaseModel.find({
+        userId,
+    })
     res.json({
-        message: "purchases endpoint"
+        purchases
     })
 })
 

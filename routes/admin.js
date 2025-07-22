@@ -106,7 +106,7 @@ adminRouter.put("/course", adminMiddleware, async function (req, res) {
     })
 
 })
-adminRouter.get("/course/bulk", async function (req, res) {
+adminRouter.get("/course/bulk",adminMiddleware, async function (req, res) {
     const adminId = req.userId;
 
 
@@ -128,8 +128,9 @@ adminRouter.get("/course/bulk", async function (req, res) {
 
 
     res.json({
-        message: "course updated",
-        courseId: course._id
+        message: "courses bulk updated",
+        courses
+        
 
     })
 })
