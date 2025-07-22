@@ -3,7 +3,7 @@
 // or
 
 const {Router}=require("express");
-const { userModel, purchaseModel } = require("../db");
+const { userModel, purchaseModel, courseModel } = require("../db");
 const jwt=require("jsonwebtoken");
 const {JWT_USER_PASSWORD}=require("../config");
 const userRouter=Router();
@@ -53,9 +53,13 @@ userRouter.get("/purchases", userMiddleware,async function (req, res) {
 
     const purchases=await purchaseModel.find({
         userId,
+    });
+    const coursesData=await courseModel.find({
+        _id: { $in: purchases.map(x=>x.courseId)} // can also use for loop to execute this line
     })
     res.json({
-        purchases
+        purchases,
+        coursesData
     })
 })
 
