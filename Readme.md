@@ -25,3 +25,8 @@ Good to haves (as said in lecture)
  - Add a rate limiting middleware
  - Frontend in ejs (low pri)
  - Frontend in React
+
+
+
+
+// can do the same demo project with DOM manipulation also 
